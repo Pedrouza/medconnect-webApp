@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pacientes - MedConnect</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="app">
+<main>
+  <h1>Pacientes</h1>
+  <form class="box" data-store="pacientes" novalidate>
+    <div class="grid">
+    <div><label for="nome">Nome completo</label><input type="text" name="nome" id="nome" data-rule="required,min3,max100"><span class="erro"></span></div>
+    <div><label for="cpf">CPF</label><input type="text" name="cpf" id="cpf" data-rule="required,cpf" data-mask="cpf"><span class="erro"></span></div>
+    <div><label for="nascimento">Data de nascimento</label><input type="date" name="nascimento" id="nascimento" data-rule="required,nasc"><span class="erro"></span></div>
+    <div><label for="telefone">Telefone</label><input type="text" name="telefone" id="telefone" data-rule="required,tel" data-mask="tel"><span class="erro"></span></div>
+    <div><label for="email">E-mail</label><input type="email" name="email" id="email" data-rule="required,email"><span class="erro"></span></div>
+    <div><label for="endereco">Endereço</label><input type="text" name="endereco" id="endereco"><span class="erro"></span></div>
+    </div>
+    <p id="msg" class="msg" role="alert"></p>
+    <button type="submit">Salvar</button> <button type="reset" id="limpar" class="sec">Limpar</button>
+  </form>
+  <div class="card">
+    <input type="search" id="busca" placeholder="Buscar na lista..." style="margin-bottom:12px">
+    <div class="tbl"><table id="tabela" data-cols="nome,cpf,nascimento,telefone,email"><thead><tr><th>Nome</th><th>CPF</th><th>Nascimento</th><th>Telefone</th><th>E-mail</th><th>Ações</th></tr></thead><tbody></tbody></table></div>
+  </div>
+</main>
+<script src="js/validacoes.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

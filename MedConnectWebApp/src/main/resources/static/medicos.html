@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Médicos - MedConnect</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="app">
+<main>
+  <h1>Médicos</h1>
+  <form class="box" data-store="medicos" novalidate>
+    <div class="grid">
+    <div><label for="nome">Nome</label><input type="text" name="nome" id="nome" data-rule="required,min3,max100"><span class="erro"></span></div>
+    <div><label for="crm">CRM (4 a 7 dígitos)</label><input type="text" name="crm" id="crm" data-rule="required,crm"><span class="erro"></span></div>
+    <div><label for="especialidade">Especialidade</label><input type="text" name="especialidade" id="especialidade" data-rule="required"><span class="erro"></span></div>
+    <div><label for="horario">Horário de atendimento</label><input type="text" name="horario" id="horario" data-rule="required"><span class="erro"></span></div>
+    </div>
+    <p id="msg" class="msg" role="alert"></p>
+    <button type="submit">Salvar</button> <button type="reset" id="limpar" class="sec">Limpar</button>
+  </form>
+  <div class="card">
+    <input type="search" id="busca" placeholder="Buscar na lista..." style="margin-bottom:12px">
+    <div class="tbl"><table id="tabela" data-cols="nome,crm,especialidade,horario"><thead><tr><th>Nome</th><th>CRM</th><th>Especialidade</th><th>Horário</th><th>Ações</th></tr></thead><tbody></tbody></table></div>
+  </div>
+</main>
+<script src="js/validacoes.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prontuários - MedConnect</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="app">
+<main>
+  <h1>Prontuários</h1>
+  <form class="box" data-store="prontuarios" novalidate>
+    <div class="grid">
+    <div><label for="consulta">Consulta</label><select name="consulta.id" id="consulta" data-source="consultas" data-rule="required"></select><span class="erro"></span></div>
+    <div><label for="observacoes">Observações</label><textarea name="observacoes" id="observacoes" rows="3" data-rule="required"></textarea><span class="erro"></span></div>
+    <div><label for="receita">Receita (opcional)</label><textarea name="receita" id="receita" rows="3"></textarea><span class="erro"></span></div>
+    </div>
+    <p id="msg" class="msg" role="alert"></p>
+    <button type="submit">Salvar</button> <button type="reset" id="limpar" class="sec">Limpar</button>
+  </form>
+  <div class="card">
+    <input type="search" id="busca" placeholder="Buscar na lista..." style="margin-bottom:12px">
+    <div class="tbl"><table id="tabela" data-cols="consulta.paciente.nome,observacoes,receita"><thead><tr><th>Paciente (consulta)</th><th>Observações</th><th>Receita</th><th>Ações</th></tr></thead><tbody></tbody></table></div>
+  </div>
+</main>
+<script src="js/validacoes.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

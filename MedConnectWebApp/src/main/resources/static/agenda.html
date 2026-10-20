@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agenda de consultas - MedConnect</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="app">
+<main>
+  <h1>Agenda de consultas</h1>
+  <form class="box" data-store="consultas" novalidate>
+    <div class="grid">
+    <div><label for="paciente">Paciente</label><select name="paciente.id" id="paciente" data-source="pacientes" data-rule="required"></select><span class="erro"></span></div>
+    <div><label for="medico">Médico</label><select name="medico.id" id="medico" data-source="medicos" data-rule="required"></select><span class="erro"></span></div>
+    <div><label for="dataHora">Data e hora</label><input type="datetime-local" name="dataHora" id="dataHora" data-rule="required,futuro"><span class="erro"></span></div>
+    <div><label for="motivo">Motivo</label><textarea name="motivo" id="motivo" rows="3" data-rule="required,max500"></textarea><span class="erro"></span></div>
+    </div>
+    <p id="msg" class="msg" role="alert"></p>
+    <button type="submit">Salvar</button> <button type="reset" id="limpar" class="sec">Limpar</button>
+  </form>
+  <div class="card">
+    <input type="search" id="busca" placeholder="Buscar na lista..." style="margin-bottom:12px">
+    <div class="tbl"><table id="tabela" data-cols="paciente.nome,medico.nome,dataHora,motivo"><thead><tr><th>Paciente</th><th>Médico</th><th>Data/hora</th><th>Motivo</th><th>Ações</th></tr></thead><tbody></tbody></table></div>
+  </div>
+</main>
+<script src="js/validacoes.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
